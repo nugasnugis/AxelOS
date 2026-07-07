@@ -1,0 +1,22 @@
+---
+componentName:  axelos
+
+strings:
+    productName:         AxelOS
+    shortProductName:    Axel
+    version:             1.0 Testing
+    shortVersion:        1.0
+    versionedName:       AxelOS 1.0 Testing
+    shortVersionedName:  AxelOS 1.0
+    bootloaderEntryName: AxelOS
+
+images:
+    productLogo:         "/usr/share/icons/hicolor/64x64/apps/kde-logo.png"
+    productIcon:         "/usr/share/icons/hicolor/64x64/apps/kde-logo.png"
+
+slideshow:               []
+
+style:
+   SIDEBAR_BACKGROUND:    "#1e1e2e"
+   SIDEBAR_TEXT:          "#cdd6f4"
+   SIDEBAR_TEXT_ACTIVE:   "#89b4fa"

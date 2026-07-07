@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=AxelOS Boot Splash
+Description=A clean dark minimal theme for AxelOS
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/axelos
+ScriptFile=/usr/share/plymouth/themes/axelos/axelos.script

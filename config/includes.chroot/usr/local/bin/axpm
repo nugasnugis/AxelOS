@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# AxelOS Theme Colors
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+PURPLE='\033[1;35m'
+RED='\033[1;31m'
+RESET='\033[0m'
+
+echo -e "${BLUE}[AxelOS Package Manager - axpm]${RESET}"
+
+if [ "$1" = "install" ]; then
+    echo -e "${GREEN}--> Installing packages...${RESET}"
+    shift
+    sudo apt-get install -y "$@"
+elif [ "$1" = "update" ]; then
+    echo -e "${GREEN}--> Updating system repositories...${RESET}"
+    sudo apt-get update
+elif [ "$1" = "setup-gaming-kernel" ]; then
+    echo -e "${PURPLE}--> Injecting Xanmod Performance Kernel...${RESET}"
+    sudo wget -qO - https://xanmod.org | sudo gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg
+    echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://xanmod.org repository main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
+    sudo apt-get update && sudo apt-get install -y linux-xanmod-x64v3
+    echo -e "${GREEN}--> Xanmod Kernel installed successfully! Reboot your system to apply changes.${RESET}"
+elif [ "$1" = "install-suite" ]; then
+    if [ "$2" = "hacking" ]; then
+        echo -e "${RED}--> Deploying Penetration Testing Frameworks...${RESET}"
+        sudo apt-get install -y nmap wireshark aircrack-ng john hydra burpsuite
+    elif [ "$2" = "gaming" ]; then
+        echo -e "${PURPLE}--> Deploying Core Gaming Packages...${RESET}"
+        sudo apt-get install -y steam lutris gnutls-bin mesa-vulkan-drivers
+    else
+        echo "Unknown suite. Available: hacking, gaming"
+    fi
+else
+    echo "Usage: axpm [install|update|setup-gaming-kernel|install-suite]"
+    echo "Suites: hacking, gaming"
+fi

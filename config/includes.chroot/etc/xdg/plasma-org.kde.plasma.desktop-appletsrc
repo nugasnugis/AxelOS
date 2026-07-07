@@ -1,0 +1,17 @@
+[Containments][1]
+activityId=
+formfactor=0
+immutability=1
+lastDesktopPath=
+location=0
+plugin=org.kde.desktopcontainment
+screen=0
+wallpaperplugin=org.kde.image
+
+[Containments][1][General]
+itemsGeometries=
+XineramaScreenMapping=
+
+[Containments][1][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/images/desktop-base/desktop-background.png
+PreviewImage=file:///usr/share/images/desktop-base/desktop-background.png

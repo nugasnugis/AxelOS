@@ -1,0 +1,37 @@
+# Base System Core
+linux-image-amd64
+initramfs-tools
+sudo
+
+# Core Graphics & X11/Wayland Display Drivers
+xserver-xorg-core
+xserver-xorg-video-all
+xserver-xorg-input-all
+wayland-protocols
+libgl1-mesa-dri
+
+# Display Manager (Login Screen)
+sddm
+
+# KDE Plasma Desktop Environment (Dual Session Support)
+plasma-desktop
+plasma-workspace-wayland
+plasma-workspace-x11
+kde-standard
+konsole
+
+# Essential Graphical Tools & Networking
+network-manager
+network-manager-gnome
+plasma-nm
+firefox-esr
+
+# Graphical System Installer
+calamares
+calamares-settings-debian
+gparted
+squashfs-tools
+
+# Boot Splash System
+plymouth
+plymouth-themes

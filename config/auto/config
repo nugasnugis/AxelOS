@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+    --distribution trixie \
+    --image-name "AxelOS" \
+    --architectures amd64 \
+    --archive-areas "main contrib non-free non-free-firmware" \
+    --bootappend-live "boot=live components username=axlive hostname=axlive locales=en_US.UTF-8 splash plymouth.theme=axelos quiet" \
+    "${@}"

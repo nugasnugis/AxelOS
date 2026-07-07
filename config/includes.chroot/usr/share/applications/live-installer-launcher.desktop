@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install AxelOS
+GenericName=System Installer
+Comment=Install AxelOS onto your storage drive
+Exec=sudo calamares
+Icon=system-software-install
+Terminal=false
+Categories=System;
