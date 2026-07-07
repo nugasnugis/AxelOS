@@ -24,6 +24,21 @@ jobs:
       run: lb config
     - name: Build ISO Image
       run: lb build
+      
+    - name: Rename ISO to axelos
+      run: |
+        # Dynamically find whatever .iso was built and rename it to axelos.iso
+        mv config/*.iso axelos-amd64.iso
+
+    - name: Create GitHub Release and Upload ISO
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: "v0.1-phase1"
+        name: "AxelOS v0.1 (Minimal Base)"
+        body: "Automated build of minimal Debian Testing base. Text-mode only."
+        files: axelos-amd64.iso
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Launch Instant Browser Preview via Pinggy
       run: |
         apt-get install -y qemu-system-x86 novnc websockify x11vnc
