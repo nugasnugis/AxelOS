@@ -28,7 +28,7 @@ jobs:
     - name: Rename ISO to axelos
       run: |
         # Dynamically find whatever .iso was built and rename it to axelos.iso
-        mv config/*.iso axelos-amd64.iso
+        mv *.iso axelos-amd64.iso
 
     - name: Create GitHub Release and Upload ISO
       uses: softprops/action-gh-release@v2
