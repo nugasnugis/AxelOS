@@ -1,7 +1,5 @@
 name: Build and Preview AxelOS
-on:
-  push:
-    branches: [ "main" ]
+on: 
   workflow_dispatch:
 permissions:
   contents: write
